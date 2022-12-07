@@ -1,0 +1,268 @@
+<!doctype html>
+
+<html>
+<head>
+<title>
+</title>
+<style>
+
+.middle
+{background-image:url('jaipur.png');
+padding:200px;
+text-align:center;
+opacity:0.9;
+color:white;
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+.content
+{background-color:black;
+color:white;
+opacity:0.7;
+font-size:30px;
+border:10px solid black;
+font-family:"Courier";
+}
+
+.wrapper
+{position:absolute;
+top:40%;
+left:40%;
+transform:translate (-30%,-30%);
+max-width:350px;
+width:100%;
+background:#49274a;
+padding:25px;
+border-radius:5px;
+border-color:#94618e;
+border-width:10px;
+border-style:solid;
+}
+
+.wrapper .btn input[type="submit"]
+{padding:10px;
+margin-top:15px;
+text-align:center;
+background:orange;
+border:2px solid black;
+text-align:center;
+font-family:courier;
+opacity:0.9;
+width:100%;
+font-weight:bold;
+cursor:pointer;
+color:black;
+}
+
+.wrapper textarea
+{resize:none;
+height:80px}
+
+ul li
+{list-style:none;
+}
+
+.container
+{width: 80%;
+margin: 0 auto;
+}
+
+header
+{background: #55d6aa;
+}
+
+header::after
+{content: '';
+display: table;
+clear: both;
+}
+
+.logo
+{float: left;
+padding: 10px 0;
+}
+
+nav
+{float:right;
+}
+
+nav ul
+{margin:0;
+padding:0;
+list-styling:none;
+}
+
+nav li
+{display:inline-block;
+margin-left: 70px;
+padding-top:23px;
+position:relative;
+}
+
+nav a 
+{color:#444;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 14px;
+}
+
+nav a:hover
+{color:#000;
+}
+
+nav a:before
+{content: '';
+display: block;
+height: 5px;
+background-color: #444;
+position: absolute;
+top: 0;
+width: 0%;
+transition: all ease-in-out 250ms:
+}
+
+nav a:hover:before 
+{width:100%;
+}
+
+.style-table{
+border-collapse:collapse;
+margin:25px;
+font-size;.9em;
+font-family:courier;
+min-width:200px;
+box-shadow:0 0 50px rgba(0,0,0, .15);
+}
+
+thead tr
+{background-colour:#444;
+color:#ffffff;
+text-align:center;
+}
+
+th,td
+{padding: 12px 15px;
+}
+
+tr
+{border-bottom: 1px solid #dddddd;
+}
+
+tr:nth-of-type(even)
+{background-color:#f3f3f3;
+}
+
+tr:last-of-type
+{border-bottom:2px solid #009879;
+}
+<!-- lets make the active row look differnt -->
+tr:active-row
+{font-weight:bold;
+color:#009879;
+}
+tr:hover
+{background-color:#009879;
+}
+
+#error_message{
+margin-bottom:20px;
+background:#F4DECB;
+padding:2px;
+text-align:center;
+font-size:10px;
+color:black;
+transition: all 0.5s ease;
+font-family: 'sans-serif';
+text-transform:uppercase;
+}
+
+</style>
+
+<meta charset="UTF-8">
+<title>Contact Us</title>
+<script>
+function validate(){
+var name1 = document.getElementById("name").value;
+var phone1 = document.getElementById("phone").value;
+var email1 = document.getElementById("email").value;
+var message1=document.getElementById("message").value;
+
+if (name1.length<5){
+text="please enter Full Name";
+error_message.innerHTML=text;
+return false;
+}
+
+if (isNaN(phone1) || phone1.length!=10){
+text="Please Enter a valid phone number";
+error_message.innerHTML=text;
+return false;
+}
+
+if (email1.indexOf("@")== -1 || email.length<6 || email1.indexOf(".")==-1){
+text="please Enter valid email";
+error_message.innerHTML=text;
+return false;}
+
+if(message1.length>100){
+x=message1.length-100
+text="you are exeeding length by"+x+"please enter less than 100 characters";
+return false;
+}
+alert("Form Submitted Successfully");
+return true;}
+</script>
+
+
+</head>
+
+<body>
+
+<div class="header">
+
+<img src="jaipur.png" height="50" width="50">
+<button class="btn">Login</button></div>
+
+<header>
+<div class="container">
+<h1 class="logo"><h1>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#Jaipur_hotels_and_resorts">Hotels and Resorts</a></li>
+<li><a href="#Jaipur_touristic">Touristic Places</a></li>
+<li><a href="Jaipur_contact_us.html">Contact</a></li>
+<li><a href="Jaipur_FAQ.html">FAQ</a><li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="wrapper">
+<h2>Contact Us</h2>
+<form id="myform" onsubmit="return validate();">
+<div class="input_field">
+<input type ="text" placeholder="Name" id="name">
+</div>
+<div class="input_feild">
+<input type="text" placeholder="Phone" id="phone">
+</div>
+<div class="input_feild">
+<input type="text" placeholder="email" id="email">
+</div>
+<div class="input_feild">
+<textarea placeholder="Message" id="message"></textarea>
+</div>
+<div class="btn">
+<input type="Submit">
+</div>
+<br>
+<br>
+<div id="error_message"></div>
+</form>
+</div>
+
+
+</body>
+</html>
