@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+.container
+{width: 80%;
+margin: 0 auto;
+}
+
+header
+{background: #55d6aa;
+}
+
+header::after
+{content: '';
+display: table;
+clear: both;
+}
+
+.logo
+{float: left;
+padding: 10px 0;
+}
+
+nav
+{float:right;
+}
+
+nav ul
+{margin:0;
+padding:0;
+list-styling:none;
+}
+
+nav li
+{display:inline-block;
+margin-left: 70px;
+padding-top:23px;
+position:relative;
+}
+
+nav a 
+{color:#444;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 14px;
+}
+
+nav a:hover
+{color:#000;
+}
+
+nav a:before
+{content: '';
+display: block;
+height: 5px;
+background-color: #444;
+position: absolute;
+top: 0;
+width: 0%;
+transition: all ease-in-out 250ms:
+}
+
+nav a:hover:before 
+{width:100%;
+}
+
+ul li{
+list-style:none;
+}
+
+.answer{
+display:none;
+padding: 5px 0px;
+margin-bottom: 15px;
+}
+
+.faq-list-item{
+position:relative;
+margin:10px;
+border-bottom:1px solid #ccc;
+cursor:pointer;
+}
+
+.faq-list-item span{
+position: absolute;
+display:inline-block;
+top:15px;
+right:200px;
+font-size:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<img src="jaipur.png" height="50" width="50">
+<button class="btn">Login</button></div>
+
+<header>
+<div class="container">
+<h1 class="logo"><h1>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#Jaipur_hotels_and_resorts">Hotels and Resorts</a></li>
+<li><a href="#Jaipur_touristic">Touristic Places</a></li>
+<li><a href="Jaipur_contact_us.html">Contact</a></li>
+<li><a href="Jaipur_FAQ.html">FAQ</a><li>
+</ul>
+</nav>
+</div>
+</header>
+
+
+<h1>FAQ</h1>
+
+
+<ul> <li class='faq-list-item'> <h2>Are there flights available to Mumbai from Jaipur?</h2> <span>+</span>
+<div class='answer'><p> Yes there are plenty of flights to Mumbai from Jaipur</p></div></li>
+
+
+<li class = 'faq-list-item'> <h2>What is the best season to visit Jaipur?</h2> 
+<span>+</span>
+<div class = 'answer'> 
+<p>If you like the cold then winter is good otherwise spring.</p></div>
+
+
+</li>
+<li class='faq-list-item'><h2>Is there train station in Jaipur?</h2> <span>+</span>
+<div class='answer'><p>Yes there is a train in Jaipur</p></div>
+</li>
+
+</ul>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$(function(){
+
+$('.faq-list-item').click(function(){
+var $answer = $(this).find('.answer');
+
+if($answer.hasClass('open')) {
+$answer.removeClass('open');
+$answer.slideUp();
+$(this).find('span').text('+');
+
+} else {
+$answer.addClass('open');
+$answer.slideDown();
+$(this).find('span').text('-');
+
+}
+});
+});
+</script>
+</body>
+</html>
